@@ -1,0 +1,34 @@
+.court {
+  fill: orange;
+  stroke:black;
+  stroke-width:8px
+  
+}
+
+.basket {
+  fill: transparent !important;
+  stroke:red;
+  stroke-width:3px
+  
+}
+.glass {
+  stroke:white;
+  stroke-width:5px
+  
+}
+.polygon {
+  fill: transparent !important;
+  stroke-width:8px;
+}
+
+.position{
+  fill: cyan;
+  stroke: black;
+  stroke-width:1px
+
+}
+.pText {
+  font-family: sans-serif;
+  text-anchor: "middle";
+  fill: black
+}
