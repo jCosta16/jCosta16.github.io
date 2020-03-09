@@ -1,13 +1,13 @@
 .court {
-  fill: orange;
-  stroke:black;
+  fill: transparent;
+  stroke:white;
   stroke-width:8px
   
 }
 
 .basket {
   fill: transparent !important;
-  stroke:red;
+  stroke:white;
   stroke-width:3px
   
 }
@@ -22,13 +22,34 @@
 }
 
 .position{
-  fill: cyan;
-  stroke: black;
-  stroke-width:1px
+  fill: rgb(248, 173, 32);
+  stroke: rgb(51, 50, 50);
+  stroke-width:1px;
 
 }
+
+.pSelect{
+  fill: rgb(96, 149, 247);
+  stroke: rgb(51, 50, 50);
+  stroke-width:1px;
+  /* font-weight: bold; */
+  font-size: 2rem;
+  stroke-width:2px;
+
+}
+
 .pText {
   font-family: sans-serif;
   text-anchor: "middle";
-  fill: black
+  fill: rgb(51, 50, 50);
+  stroke: rgb(51, 50, 50);
+
+  /* text-decoration-color: rgb(51, 50, 50) !important; */
+
+}
+.b {
+  font-weight: bold;
+}
+.n {
+  font-weight: normal;
 }
