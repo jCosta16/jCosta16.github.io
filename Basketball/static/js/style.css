@@ -53,3 +53,33 @@
 .n {
   font-weight: normal;
 }
+
+.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  /* width: 60px;					
+  height: 28px;					 */
+  padding: 5px;				
+  font: 12px sans-serif;		
+  background: lightgoldenrodyellow;	
+  border: 1px;		
+  border-radius: 8px;			
+  pointer-events: none;			
+}
+.tooltip.pSelect{	
+  position: absolute;			
+  text-align: center;			
+  /* width: 60px;					
+  height: 28px;					 */
+  padding: 8px;				
+  font: 12px sans-serif;		
+  background: lightskyblue !important;	
+  border: 1px;		
+  border-radius: 8px;			
+  pointer-events: none;			
+}
+hr {
+  border-top: 1px solid;
+  padding: 1px;
+  margin: 1px;  
+}
