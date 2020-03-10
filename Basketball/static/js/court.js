@@ -1,4 +1,15 @@
 var court_data
+function multiplemax(test_array) { 
+  let arr = Object.values(test_array);
+  let max = Math.max(...arr)
+  let listtest =[]
+  for (let [key, value] of Object.entries(test_array)) {
+    if(value == max){
+      listtest.push(key)
+    }
+  }
+  return [listtest, max];
+};
 // Append the SVG wrapper to the page, set its height and width, and create a variable which references it
 var svg = d3.select("#court-svg")
   .append("svg")
