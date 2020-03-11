@@ -24,6 +24,7 @@ function buildMetadata(sample) {
         };
       };   
     };  
+    // console.log(sorted_year)
 
     // find the player highest salary for that years draft
     var maxSalary = _.max(sorted_year, function (player) {
@@ -87,6 +88,10 @@ function init() {
     
     buildMetadata(firstSample);
     buildPosition(firstSample);
+    buildMap(firstSample);
+     
+    // plotly function
+
 
   });
 }
@@ -95,6 +100,11 @@ function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
   buildMetadata(newSample);
   buildPosition(newSample);
+  updateMap(newSample);  
+  
+  // plotly function
+
+
 };
 
 // Initialize the dashboard

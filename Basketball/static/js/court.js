@@ -50,11 +50,6 @@ var courtGroup = chartGroup.selectAll(".court");
 
 var test = ["Power Forward", "Shooting Guard"]
 var testpos = "Power Forward"
-if(test.includes(testpos)) {
-console.log("yes")
-} else{
-  console.log("nooooo")
-}
 
 
 var positions = [
@@ -64,9 +59,7 @@ var positions = [
   {"position": {"PF": "Power Forward"},"loc":{"x": 180, "y": 400}},
   {"position": {"CT": "Center"},"loc":{"x": 400, "y": 350}} 
 ];
-for(var i=0, len = positions.length; i < len; i++){
-  console.log(positions[i].loc.x)
-}
+
 var tooltip = d3.select("body").append("div")	
 .attr("class", "tooltip")				
 .style("opacity", 0);
@@ -94,7 +87,6 @@ function buildPosition(sample) {
     var position_drafted = _.countBy(sorted_year, function (player) {
       return player.position;
     });
-    
     var top_position = multiplemax(position_drafted);
     
     // chartGroup.selectAll(".position").remove()
@@ -115,7 +107,6 @@ function buildPosition(sample) {
         .attr("cx", positions[i].loc.x)
         .attr("cy", positions[i].loc.y)
         .on("mouseover", function(d) {	
-          console.log(value)	
           toolTip.style("opacity", .9)
           .attr("class", "tooltip pSelect");		
               toolTip	.html(`<strong>${value}</strong><hr>Players drafted:<br>${top_position[1]}`)	
@@ -146,7 +137,6 @@ function buildPosition(sample) {
           .attr("cx", positions[i].loc.x)
           .attr("cy", positions[i].loc.y)
           .on("mouseover", function(d) {	
-            console.log(value)	
             toolTip.style("opacity", .9)
             .attr("class", "tooltip");		
                 toolTip	.html(`<strong>${value}</strong><hr>Players drafted:<br>${position_drafted[value]}`)	
@@ -169,22 +159,7 @@ function buildPosition(sample) {
 
         };
         
-        var positionGroup = chartGroup.selectAll(".position")
-        // .data(tpos);
-        
-        // Step 2: Create "mouseover" event listener to display tooltip
-      //   positionGroup.on("mouseover", function(positions) {	
-      //     console.log(positions.loc)	
-      //     toolTip.style("opacity", .9);		
-      //         toolTip	.html(loc + "<br/>")	
-      //         .style("left", (d3.event.pageX) + "px")		
-      //         .style("top", (d3.event.pageY - 28) + "px");	
-      //     })					
-      //    .on("mouseout", function(d) {		
-      //   toolTip.transition()		
-      //         .duration(500)		
-      //         .style("opacity", 0);	
-      // });
+        var positionGroup = chartGroup.selectAll(".position");
       };
     };
     
