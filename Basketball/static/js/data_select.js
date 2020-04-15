@@ -1,5 +1,5 @@
 var year_data;
-// funtion to find multiple max values
+// function to find multiple max values
 function multiplemax(test_array) { 
   let arr = Object.values(test_array);
   let max = Math.max(...arr)
