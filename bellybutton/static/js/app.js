@@ -2,7 +2,6 @@
 
 
 function buildMetadata(sample) {
-  // @TODO: Complete the following function that builds the metadata panel
   d3.json("samples.json").then(function(data) {
     var dataName = data.metadata
     for (var i=0, len = dataName.length; i < len; i++) {
@@ -17,7 +16,6 @@ function buildMetadata(sample) {
     };
     
     
-    // BONUS: Build the Gauge Chart
     var dataGauge = [
       {
         domain: { x: [0, 1], y: [0, 1] },
@@ -54,9 +52,6 @@ function buildMetadata(sample) {
     var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
     Plotly.newPlot('gauge', dataGauge, layout);
    
-    // buildGauge(data.WFREQ);
-
-
 
   });
 }
@@ -104,15 +99,6 @@ function buildCharts(sample) {
 
       }
     }
-    // @TODO: Use `d3.json` to fetch the sample data for the plots
-    
-    // @TODO: Build a Bubble Chart using the sample data
-
-
-
-    // @TODO: Build a Pie Chart
-    // HINT: You will need to use slice() to grab the top 10 sample_values,
-    // otu_ids, and labels (10 each).
     
   });  
 
