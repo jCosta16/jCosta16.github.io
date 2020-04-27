@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<title>QuaranTeam</title>
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+	<!-- Leaflet CSS & JS  -->
+	<!--
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="	crossorigin=""/>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
+	-->
+	<!-- Icons -->
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- Our CSS  -->
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+   
+  
+</head>
+<body>
+ 
+	<header class="blog-header border-bottom shadow-sm"> 
+		 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transp-menu"> 
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto"> 
+				<li class="nav-item">
+				  <a class="btn  btn-danger" href="index.html#">Home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="#theMap"> Analysis</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="index.html#lessons">Lessons</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="#band">Visuals</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://docs.google.com/presentation/d/1ZDs8j7ShottBL3bOWtlAnvr6i0X9eZxPBACiCNWSCvI/edit?usp=sharing">Final Project pptx. </a>
+				  </li>
+				
+		
+				<li class="nav-item">
+				  <!-- <a class="nav-link" href="#tour">Resources</a> -->
+				</li> 
+			  </ul>
+		 
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Coding Library
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
+				<a class="dropdown-item" href="http://localhost:8888/notebooks/CSV_VISUALIZATION.ipynb"> Visuals Notebook</a>
+				<a class="dropdown-item" href="http://localhost:8889/notebooks/Final-Project-JoaoCosta/CSV_ML_MODELS.ipynb">Models Notebook</a>
+				<a class="dropdown-item" href="http://localhost:8889/notebooks/Final-Project-JoaoCosta/Cancer_detection_grayscale.ipynb">Cancer Detection Grayscale</a> 
+			  </div>
+			</div>
+
+			 <ul class="navbar-nav ">
+			  <li class="nav-item">
+				 <a class="nav-link" href="https://www.kaggle.com/uciml/breast-cancer-wisconsin-data">DESCRIPTIVE DATASET</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="https://www.kaggle.com/paultimothymooney/breast-histopathology-images">IMAGES DATASET</a> 
+				</li>
+				</ul>
+			  </form>
+			</div>
+		  </nav> 
+	</header>
+	
+	
+    <main role="main" class="">
+	
+	
+	<section class="space-lg  overflow-hidden breathingMap">
+		<div class="container py-4 mt-5 introBanner">
+			<h1 class='grey	center mt-5 our-intro-title'style="text-align: center">QuaranTeam: Using Machine Learning in Cancer Diagnostics
+			</h1>
+			<h5 style="text-align: justify">Medical studies use data to aid in diagnostics and finding appropriate treatment options. 
+				With medical exams generating substantial amounts of data, Machine Learning is a powerful tool to assist in diagnostics, 
+				for both doctors and medical researchers.
+			</h5>
+				
+			<a class="btn btn-lg btn-danger " id="introButton" href="#theMap">Analysis</a> 
+			
+			
+		</div>
+	</section>
+	
+	
+	<section class="space-lg overflow-hidden" id='theMap'>
+		<div class="container py-4 mt-5">
+			<h1><i>Abstract</i> </h1>
+			<hr class="featurette-divider">
+			<p style="text-align: justify">Medical studies use data to aid in diagnostics and finding appropriate treatment options. With medical exams generating substantial amounts of data, Machine Learning is a powerful tool to assist in diagnostics, for both doctors and medical researchers.</p> 
+			<p style="text-align: justify">In this project we used two Breast Cancer data sets, one with quantitative information, and one with images, both containing normal and cancerous cells. With the quantitative dataset, we ran our data through various machine learning classifiers, and ranked them in terms of accuracy. An ensemble model was created using previous models and weighted proportionally by the accuracy of each model, in turn obtaining a 95.90% predictive accuracy for numeric data. For the image data, our approach was to pass them through a sequential neural network, tuning the weights, layers, and other configurations, to improve the accuracy of our diagnosis. Our final model achieved an accuracy of 85.20%. We tested our model against a modified VGG-19 convolutional neural network (from the Department of Engineering Science at University of Oxford), but were not able to surpass an 85% accuracy rating. </p>
+			<p style="text-align: justify">The use of Machine Learning is a very promising and powerful tool that can help doctors and researchers achieve more accurate diagnostics, treatments, and results. We can conclude that, in this case, quantitative data was more suited to the algorithms used for machine learning. This may be because the classes were easier to tease apart using numerical data rather than images allowing us to perform a more granular analysis. </p> 
+
+		</div>	
+		<div class="container py-4 mt-5">
+			<h1><i>Analysis</i> </h1>
+			<hr class="featurette-divider">
+			<h4>Reading the Data</h4>
+<p>The first thing is to read the data and get to know our dataset. The Breast Cancer Wisconsin (Diagnostic) Data Set have 569 rows and 32 columns (features), and has the following distribution:</p>
+<p>Total Tumors on data: 569<br>
+Total Benign Tumors: 357<br>
+Total Malignant Tumors on data: 212</p>
+<p>After reading our data we split the numeric and categorical data, giving the categorical data an <em>OneHotEnconded</em> treatment. Using 1&rsquo;s and 0&rsquo;s instead of categorical information.</p>
+<h4>Feature Selection</h4>
+<p>Then we pass to the Feature Selection step, where using <em>SelectKBest</em> from <em>sklearn</em> library we selected the 10 most strongly correlated features to build our models.
+	Splitting the data into Training and Testing data, on a 70/30 ratio, we ended up with a training dataset that contains:&nbsp; 250 Benign and 148 Malignant data points.</p>
+<h4>Oversampling </h4>
+<p>Since our dataset was relatively small, we decided take advantage of the oversampling functions from the <em>imbalanced-learn</em> library.</p>
+<p>The main Oversampling models are Synthetic Minority Over-sampling Technique (SMOTE) and Adaptive Synthetic (ADASYN). SMOTE works by finding the n-nearest neighbors in the minority class for each of the samples in the class. Then it draws a line between the neighbors an generates random points on the lines.</p>
+<p>ADASYN works in a similarly to SMOTE, but with a minor improved. After creating the sample, it adds a random small values to the points. In other words, instead of all the sample being linearly correlated to the parent they have a little more variance in them, been a bit more scattered.</p>
+<p>To take advantage of this smaller variation on the new data, we used the ADASYN model to oversample our training data. The oversampled ADASYN training dataset contains: 250 Benign and 254 Malignant data points.</p>
+<h4>Creating and training Models</h4>
+<p>We created 5 different Machine Learning models, for all of them we used <em>GridSearchCV</em> from <em>sklearn</em> library to tune the parameters trying to improve the accuracy of the models.</p>
+<p>The final result of each model is represented in the table below:</p>
+<table class="table-striped table-sm table-responsive" style="text-align: center">
+<tbody>
+<tr>
+<td width="208">
+<p><strong>MODEL</strong></p>
+</td>
+<td width="208">
+<p><strong>Test Data Accuracy</strong></p>
+</td>
+<td width="208">
+<p><strong>Misclassed Data</strong></p>
+</td>
+</tr>
+<tr>
+<td width="208">
+<p>Logistic Regression Model</p>
+</td>
+<td width="208">
+<p>93.0%</p>
+</td>
+<td width="208">
+<p>12</p>
+</td>
+</tr>
+<tr>
+<td width="208">
+<p>SVC Model</p>
+</td>
+<td width="208">
+<p>93.6%</p>
+</td>
+<td width="208">
+<p>11</p>
+</td>
+</tr>
+<tr>
+<td width="208">
+<p>Neural Network Model</p>
+</td>
+<td width="208">
+<p>93.6%</p>
+</td>
+<td width="208">
+<p>10</p>
+</td>
+</tr>
+<tr>
+<td width="208">
+<p>Random Forest Model</p>
+</td>
+<td width="208">
+<p>94.2%</p>
+</td>
+<td width="208">
+<p>10</p>
+</td>
+</tr>
+<tr>
+<td width="208">
+<p>GradientBoosting Model</p>
+</td>
+<td width="208">
+<p>92.4%</p>
+</td>
+<td width="208">
+<p>14</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h4>Ensemble an improved Model</h4>
+<p>To further improve our Machine Learn model we used the <em>EnsembleVoteClassifier</em>, from "<em>mlxtend</em>" library, to create an improved vote classifier. Based on the number of misclassed data, each model received a different weight to their vote. Those with the best results received a higher value. Using this technique, the final ensemble model gave us an accuracy of 95.90%</p>
+		</div>	
+		<div class="container py-4 mt-5">
+			<h1><i>Steps and Results</i> </h1>
+			<hr class="featurette-divider">
+			<div class="row">
+			  <div class="col">
+				<div>
+					<section> 
+		
+						<video width="800" controls>
+							<source src="static/video/video.mov" type="video/mp4"> 
+						</video>
+					</section>
+					<br/><br/>
+					
+						
+				</div>  
+					 
+				<br/>
+			  </div>
+			  <div class="col">
+				<h3>Image Dataset</h3>
+				<h5>Grayscaled Images</h5>
+				<h5>Layer Structure</h5>
+				<ul>
+					<li>1st Layer - 64</li>
+					<li>2nd Layer - 32</li>
+					<li>3rd Layer - 8</li> 
+				</ul>
+				<h5>Number of Epochs - 3</h5>
+				<!-- <ol>
+					<li>1st Layer - 64</li>
+					<li>2nd Layer - 32</li>
+					<li>3rd Layer - 8</li> 
+				</ol> -->
+				
+				<p> 
+ Applied Stochastic Gradient Descent (SGD) to improve our modeling.
+</p>
+<h5>Neural Network</h5>
+<ul>
+					<li>Accuracy: <b>85.20%</b></li>
+					<li>Loss: 0.41943401273091635</li> 
+</ul>
+			  </div>
+			</div> 
+					<h1><i>Models and Visualization</i> </h1>
+					<hr class="featurette-divider">
+					
+					<div class="row">
+					  <div class="col">
+					  
+						<div>
+							<section>  
+								<video width="800" controls>
+									<source src="static/video/video2.mov" type="video/mp4"> 
+								</video>
+							</section>
+							<br/><br/> 
+						</div>   
+					  </div> 
+					  <div class="col">
+						<div>
+							<h3>Descritive Dataset</h3>
+							<h5>Original Training Data</h5>
+							<ul>
+								<li>Total Tumors - 398 </li>
+								<li>Total Benign Tumors - 250</li>
+								<li>Total Malignant Tumors - 148</li>
+			
+							</ul>
+							<h5>Oversampled Data</h5>
+							<ul>
+								<li>Total Tumors - 504 </li>
+								<li>Total Benign Tumors - 254</li>
+								<li>Total Malignant Tumors - 250</li>
+							</ul>
+							<h5>Models and Accuracy</h5>
+							<ul>
+								<li>Logistic Regression: 93.0%</li>
+								<li>SVC: 93.6%</li>
+								<li>Neural Network: 93.6%</li>
+								<li>Random Forest: 94.2%</li>
+								<li>GradientBoosting: 92.4%</li>
+
+							</ul>
+							<h5>Ensemble Model Accuracy</h5>
+							<ul>
+								<li>Ensemble Model: 95.90%</li>
+							</ul> 
+							<p>  
+						</div>
+					  </div>
+					</div> 
+			
+						<!-- 1 – Which model is appropriate for my data?
+
+2 – The order in which to set up the model. When should we oversample? At which point does oversampling occur? Should we maintain the 1-0 original balance?
+
+3 – Neural Networks are indeed a black box.
+
+4 – Never trust the description of the data you are downloading. A thorough EDA process can save a lot of time.
+
+5 – More steps do not mean better results.
+
+6 – Run your code through a small sample to prevent running out of memory. -->
+ 
+				</div> 
+			</section>
+	
+	<section class="space-lg bg-gradient overflow-hidden" id="lessons">
+		<div class="row">
+			<div class="col">
+				<div class="container py-4 mt-5">
+					<h1 class='white'><i>Lessons Learned</i> </h1>
+					<hr class="featurette-divider">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+						<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+						<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+						<li data-target="#myCarousel" data-slide-to="4" class=""></li>
+						<li data-target="#myCarousel" data-slide-to="5" class=""></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="container">
+								<div class="carousel-caption text-center">
+									<h3>Which model is appropriate for my data?</h3>
+									<p> </p> 
+								</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								 <div class="container">
+								<div class="carousel-caption text-center">
+									<h3>The order in which to set up the model. When should we oversample? At which point does oversampling occur? Should we maintain the 1-0 original balance?</h3>
+									<p> </p>
+									 
+								</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								 <div class="container">
+								<div class="carousel-caption text-center">
+									<h3>Neural Networks are indeed a black box.</h3>
+									<p> </p>
+									 
+								</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								 <div class="container">
+								<div class="carousel-caption text-center">
+									<h3>Never trust the description of the data you are downloading. A thorough EDA process can save a lot of time.</h3>
+									<p> </p>
+									 
+								</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								 <div class="container">
+								<div class="carousel-caption text-center">
+									<h3>More steps do not mean better results.</h3>
+									<p> </p>
+									 
+								</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								 <div class="container">
+								<div class="carousel-caption text-center">
+									<h3>Run your code through a small sample to prevent running out of memory.</h3>
+									<p> </p>
+									 
+								</div>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<section class="space-lg overflow-hidden vizColor" id="band">
+		<div class="row">
+			<div class="col">
+				<div class="container marketing visualization mt-5">
+					<h1><i>Visualization </i></h1>
+					<hr class="featurette-divider">
+					<!-- Three columns of text below the carousel --> 
+							<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+								<ol class="carousel-indicators">
+								<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+								<li data-target="#myCarousel2" data-slide-to="1" class=""></li>
+								<li data-target="#myCarousel2" data-slide-to="2" class=""></li>
+								<li data-target="#myCarousel2" data-slide-to="3" class=""></li>
+								<li data-target="#myCarousel2" data-slide-to="4" class=""></li>
+								<li data-target="#myCarousel2" data-slide-to="5" class=""></li>
+								<li data-target="#myCarousel2" data-slide-to="6" class=""></li>
+								</ol>
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/1.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+										</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										 <div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/2.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+										</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										 <div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/3.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+										</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										 <div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/4.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+											 
+										</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										 <div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/5.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+											 
+										</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										 <div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/6.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+											 
+										</div>
+										</div>
+									</div>
+									<div class="carousel-item">
+										 <div class="container">
+										<div class="carousel-caption text-center">
+											<img src="static/img/7.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+											 
+										</div>
+										</div>
+									</div>
+								</div>
+								<a class="carousel-control-prev" href="#myCarousel2" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="#myCarousel2" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+								</a>
+							</div>
+					
+					<!-- 
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/1.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2> </h2> 
+							<p> </p>
+						</div>
+					  </div>  
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/2.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2>  </h2> 
+						</div>
+					  </div> 
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/3.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2> </h2> 
+						</div>
+					  </div> 
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/4.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2> </h2> 
+						</div>
+					  </div> 
+					 
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/5.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2> </h2> 
+						</div>
+					  </div> 
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/6.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2> </h2> 
+						</div>
+					  </div> 
+					  <div class="col-lg-3">
+						<div class="text-center">
+							<img src="static/img/7.png" class="img-fluid img-thumbnail rounded" alt="..."> 
+							<h2> </h2> 
+						</div>
+					  </div> -->
+					  
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	 		 
+		<!--Team container--> 
+		<section class="space-lg overflow-hidden colorTeam" id="band">
+			<div class="row">
+				<div class="col">
+					<div class="container marketing mt-5">
+						<h1><i>Meet the Team </i></h1>
+						<hr class="featurette-divider">
+						<!-- Three columns of text below the carousel -->
+						<div class="row">
+						  <div class="col-lg-4">
+							<div class="text-center">
+								<img src="static/img/team1.jpeg" class="img-fluid img-thumbnail rounded-circle" alt="..."> 
+								<h5><i> Vitor Ribeiro </i></h5>
+								<h6>
+									<a  href="https://www.linkedin.com/in/v-ribeiro/"> <img class="icon-item" src="static/img/linkedin.png"></a>
+									<a  href="https://github.com/VitorRibeiro324-lab"> <img class="icon-item" src="static/img/GitHub-Mark-32px.png" alt=""></a>
+								</h6> 
+								<p> </p>
+							</div>
+						  </div><!-- /.col-lg-4 -->
+						  <div class="col-lg-4">
+							<div class="text-center">
+								<img src="static/img/team2.jpeg" class="img-fluid img-thumbnail rounded-circle" alt="..."> 
+							
+							<h5> <i>Michelle Fitzpatrick</i> </h5> 
+							<h6>									
+								<a  href="https://www.linkedin.com/in/michelle-fitzpatrick-7092a6109/"> <img class="icon-item" src="static/img/linkedin.png"></a>
+								<a  href="https://github.com/Fitzpatrickmn"> <img class="icon-item" src="static/img/GitHub-Mark-32px.png" alt=""></a> 
+							</h6>
+						</div>
+						  </div><!-- /.col-lg-4 -->
+						  <div class="col-lg-4">
+							<div class="text-center">
+								<img src="static/img/team3.jpeg" class="img-fluid img-thumbnail rounded-circle" alt="..."> 
+								<h5><i>Aliona R.Mizelle </i></h5> 
+								<h6>
+									<a  href="https://www.linkedin.com/in/alionarmizelle/"> <img class="icon-item" src="static/img/linkedin.png"></a>
+									<a  href="https://github.com/areselian"> <img class="icon-item" src="static/img/GitHub-Mark-32px.png" alt=""></a>
+								</h6>
+							</div>
+						  </div><!-- /.col-lg-4 -->
+						  <div class="col-lg-2" ></div>
+						  <div class="col-lg-4">
+							<div class="text-center">
+								<img src="static/img/team4.jpeg" class="img-fluid img-thumbnail rounded-circle" alt="..."> 
+								<h5><i>Joao Costa </i></h5> 
+								<h6>
+									<a  href="https://www.linkedin.com/in/joao-costa-919535193/"> <img class="icon-item" src="static/img/linkedin.png"></a>
+									<a  href="https://github.com/jCosta16"> <img class="icon-item" src="static/img/GitHub-Mark-32px.png" alt=""></a>
+								</h6>
+							</div>
+						  </div><!-- /.col-lg-4 -->
+						  
+						  <!-- /.col-lg-4 -->
+						  <div class="col-lg-4">
+							<div class="text-center">
+								<img src="static/img/team5.png" class="img-fluid img-thumbnail rounded-circle" alt="..."> 
+								<h5><i>Kate Vnuk </i></h5> 
+								<h6>
+									<a  href="https://www.linkedin.com/in/katevnuk/"> <img class="icon-item" src="static/img/linkedin.png"></a>
+									<a  href="https://github.com/katevnuk"> <img class="icon-item" src="static/img/GitHub-Mark-32px.png" alt=""></a>
+								</h6>
+							</div>
+						  </div><!-- /.col-lg-4 -->
+						  <div class="col-lg-2" ></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<div class="container marketing mt-5" >
+		
+
+
+
+
+
+
+
+		
+			<!-- START THE FEATURETTES -->
+			
+			
+	</div>
+ 
+
+			<hr class="featurette-divider">
+ 
+			<!-- /END THE FEATURETTES --> 
+		 
+
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+ 
+      <!-- <p>Footer credits</p> -->
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04=" crossorigin="anonymous"></script>
+	
+	<!-- D3 cdn -->
+	 
+	<!-- 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script> 
+	 
+	 
+	<script type="text/javascript" src="logic.js"></script> -->
+	 
+	
+	<!-- D3 -->
+	<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+-->
+	<!-- MomentJS -->
+	<!--
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+-->
+	<!-- Leaflet JavaScript -->
+		<!--
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+	integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="	crossorigin=""></script>
+-->
+	<!-- Icons -->
+	<!--
+	<script src="static/js/leaflet.extra-markers.min.js"></script>
+-->
+	<!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+	<!--
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+-->
+	<!-- API Key -->
+	<!--
+	<script type="text/javascript" src="static/js/config.js"></script>
+-->
+	<!-- Our JavaScript -->
+	<!--
+	<script type="text/javascript" src="static/js/logic.js"></script>
+-->
+
+	
+</body>
+</html>
+
