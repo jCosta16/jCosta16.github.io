@@ -107,207 +107,150 @@
 
 		</div>	
 		<div class="container py-4 mt-5">
-			<h1><i>Analysis</i> </h1>
+			<h1><i>Quantitative Dataset Analysis</i> </h1>
+			<hr class="featurette-divider">
+			
+			<h3>Reading the Data</h3>
+			<p>The first thing is to read the data and get to know our dataset. The Breast Cancer Wisconsin (Diagnostic) Data Set have 569 rows and 32 columns (features), and has the following distribution:</p>
+			<p>Total Tumors on data: 569<br>
+			Total Benign Tumors: 357<br>
+			Total Malignant Tumors on data: 212</p>
+			<p>After reading our data we split the numeric and categorical data, giving the categorical data an <em>OneHotEnconded</em> treatment. Using 1&rsquo;s and 0&rsquo;s instead of categorical information.</p>
+			
+			<h3>Feature Selection</h3>
+			<p>Then we pass to the Feature Selection step, where using <em>SelectKBest</em> from <em>sklearn</em> library we selected the 10 most strongly correlated features to build our models.
+				Splitting the data into Training and Testing data, on a 70/30 ratio, we ended up with a training dataset that contains:&nbsp; 250 Benign and 148 Malignant data points.</p>
+			
+				<h3>Oversampling </h3>
+			<p>Since our dataset was relatively small, we decided take advantage of the oversampling functions from the <em>imbalanced-learn</em> library.</p>
+			<p>The main Oversampling models are Synthetic Minority Over-sampling Technique (SMOTE) and Adaptive Synthetic (ADASYN). SMOTE works by finding the n-nearest neighbors in the minority class for each of the samples in the class. Then it draws a line between the neighbors an generates random points on the lines.</p>
+			<p>The ADASYN technique improves upon SMOTE. After creating the sample, it adds a random small values to the points. In other words, instead of all the sample being linearly correlated to the parent they have a little more variance in them, been a bit more scattered.</p>
+			<p>To take advantage of this smaller variation on the new data, we used the ADASYN model to oversample our training data. The oversampled ADASYN training dataset contains: 250 Benign and 254 Malignant data points.</p>
+			
+			<h3>Creating and training Models</h3>
+			<p>We created 5 different Machine Learning models, for all of them we used <em>GridSearchCV</em> from <em>sklearn</em> library to tune the parameters trying to improve the accuracy of the models.</p>
+			<p>The final result of each model is represented in the table below:</p>
+			
+				<table class="table-striped table-sm table-responsive" style="text-align: center">
+				<tbody>
+				<tr>
+				<td width="208">
+				<p><strong>MODEL</strong></p>
+				</td>
+				<td width="208">
+				<p><strong>Test Data Accuracy</strong></p>
+				</td>
+				<td width="208">
+				<p><strong>Misclassed Data</strong></p>
+				</td>
+				</tr>
+				<tr>
+				<td width="208">
+				<p>Logistic Regression Model</p>
+				</td>
+				<td width="208">
+				<p>93.0%</p>
+				</td>
+				<td width="208">
+				<p>12</p>
+				</td>
+				</tr>
+				<tr>
+				<td width="208">
+				<p>SVC Model</p>
+				</td>
+				<td width="208">
+				<p>93.6%</p>
+				</td>
+				<td width="208">
+				<p>11</p>
+				</td>
+				</tr>
+				<tr>
+				<td width="208">
+				<p>Neural Network Model</p>
+				</td>
+				<td width="208">
+				<p>93.6%</p>
+				</td>
+				<td width="208">
+				<p>10</p>
+				</td>
+				</tr>
+				<tr>
+				<td width="208">
+				<p>Random Forest Model</p>
+				</td>
+				<td width="208">
+				<p>94.2%</p>
+				</td>
+				<td width="208">
+				<p>10</p>
+				</td>
+				</tr>
+				<tr>
+				<td width="208">
+				<p>GradientBoosting Model</p>
+				</td>
+				<td width="208">
+				<p>92.4%</p>
+				</td>
+				<td width="208">
+				<p>14</p>
+				</td>
+				</tr>
+				</tbody>
+				</table>
+			
+			<p>&nbsp;</p>
+			<p style="text-align: justify"><strong>Logistic Regression</strong>: uses Sigmoid function to establish a decision boundary between the two classes.</p>
+			<p style="text-align: justify"><strong>Support Vector Classifier</strong>: fits to the data returning a &lsquo;best fit&rsquo; hyperplane categorizing between the two classes.</p>
+			<p style="text-align: justify"><strong>Neural Network</strong>: a class of ML algorithms used to model complex patterns, which is trained by adjusting the input weights based on network performance. If the network classifies an image correctly, weights contributing to the correct answer are increased, while other weights are decreased.</p>
+			<p style="text-align: justify"><strong>Random Forest</strong>: an ensemble of multiple decision trees meant to improve accuracy through randomization</p>
+			<p style="text-align: justify"><strong>Gradient Boosting Model</strong>: combines weak "learners" into a single strong learner in an iterative fashion, building the model in stages.</p>
+			
+			<h3>Ensemble an improved Model</h3>
+			<p style="text-align: justify">To further improve our Machine Learn model we used the <em>EnsembleVoteClassifier</em>, from <em>mlxtend</em> library, to create an improved vote classifier. Based on the number of misclassed data, each model received a different weight to their vote. Those with the best results received a higher value. Using this technique, the final ensemble model gave us an accuracy of <strong>95.90%</strong>.</p>
+			<div style="padding-top: 20px; padding-bottom: 20px; border-style: double; "> 
+				<h3 style="text-align: center;">Quantitative Analysis Video</h3>
+				<video style="  display: block; margin-left: auto; margin-right: auto; padding-top: 20px;" width="80%%" controls>
+					<source src="static/video/csv_analysis.mp4" type="video/mp4"> 
+				</video>
+			</div>
+		</div>
+		<div class="container py-4 mt-5">
+			<h1><i>Image Dataset Analysis</i> </h1>
 			<hr class="featurette-divider">
 			<h4>Reading the Data</h4>
-<p>The first thing is to read the data and get to know our dataset. The Breast Cancer Wisconsin (Diagnostic) Data Set have 569 rows and 32 columns (features), and has the following distribution:</p>
-<p>Total Tumors on data: 569<br>
-Total Benign Tumors: 357<br>
-Total Malignant Tumors on data: 212</p>
-<p>After reading our data we split the numeric and categorical data, giving the categorical data an <em>OneHotEnconded</em> treatment. Using 1&rsquo;s and 0&rsquo;s instead of categorical information.</p>
-<h4>Feature Selection</h4>
-<p>Then we pass to the Feature Selection step, where using <em>SelectKBest</em> from <em>sklearn</em> library we selected the 10 most strongly correlated features to build our models.
-	Splitting the data into Training and Testing data, on a 70/30 ratio, we ended up with a training dataset that contains:&nbsp; 250 Benign and 148 Malignant data points.</p>
-<h4>Oversampling </h4>
-<p>Since our dataset was relatively small, we decided take advantage of the oversampling functions from the <em>imbalanced-learn</em> library.</p>
-<p>The main Oversampling models are Synthetic Minority Over-sampling Technique (SMOTE) and Adaptive Synthetic (ADASYN). SMOTE works by finding the n-nearest neighbors in the minority class for each of the samples in the class. Then it draws a line between the neighbors an generates random points on the lines.</p>
-<p>ADASYN works in a similarly to SMOTE, but with a minor improved. After creating the sample, it adds a random small values to the points. In other words, instead of all the sample being linearly correlated to the parent they have a little more variance in them, been a bit more scattered.</p>
-<p>To take advantage of this smaller variation on the new data, we used the ADASYN model to oversample our training data. The oversampled ADASYN training dataset contains: 250 Benign and 254 Malignant data points.</p>
-<h4>Creating and training Models</h4>
-<p>We created 5 different Machine Learning models, for all of them we used <em>GridSearchCV</em> from <em>sklearn</em> library to tune the parameters trying to improve the accuracy of the models.</p>
-<p>The final result of each model is represented in the table below:</p>
-<table class="table-striped table-sm table-responsive" style="text-align: center">
-<tbody>
-<tr>
-<td width="208">
-<p><strong>MODEL</strong></p>
-</td>
-<td width="208">
-<p><strong>Test Data Accuracy</strong></p>
-</td>
-<td width="208">
-<p><strong>Misclassed Data</strong></p>
-</td>
-</tr>
-<tr>
-<td width="208">
-<p>Logistic Regression Model</p>
-</td>
-<td width="208">
-<p>93.0%</p>
-</td>
-<td width="208">
-<p>12</p>
-</td>
-</tr>
-<tr>
-<td width="208">
-<p>SVC Model</p>
-</td>
-<td width="208">
-<p>93.6%</p>
-</td>
-<td width="208">
-<p>11</p>
-</td>
-</tr>
-<tr>
-<td width="208">
-<p>Neural Network Model</p>
-</td>
-<td width="208">
-<p>93.6%</p>
-</td>
-<td width="208">
-<p>10</p>
-</td>
-</tr>
-<tr>
-<td width="208">
-<p>Random Forest Model</p>
-</td>
-<td width="208">
-<p>94.2%</p>
-</td>
-<td width="208">
-<p>10</p>
-</td>
-</tr>
-<tr>
-<td width="208">
-<p>GradientBoosting Model</p>
-</td>
-<td width="208">
-<p>92.4%</p>
-</td>
-<td width="208">
-<p>14</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<h4>Ensemble an improved Model</h4>
-<p>To further improve our Machine Learn model we used the <em>EnsembleVoteClassifier</em>, from "<em>mlxtend</em>" library, to create an improved vote classifier. Based on the number of misclassed data, each model received a different weight to their vote. Those with the best results received a higher value. Using this technique, the final ensemble model gave us an accuracy of 95.90%</p>
+			<p>As first we first load all the images and look at one trying to know the dataset and what would be the best way to approach a to tackle a data with over 275,000 images. We look at the shape of the images and identified that most of them had a shape of 50 pixels by 50 pixels with an RGB color palette (50x50x3).</p>
+			<p>The RGB palette would increase our processing time since we would have to analyze each point in the image 3 times. To improve our processing time, we chose to use the images in a grayscale form (50x50x1).</p>
+			<h4>Sampling the Data</h4>
+			<p>After label the images in cancerous and non-cancerous, we took a sample of 60,000 images. Transformed all to grayscale and resize them to make sure that all the images have the same size.</p>
+			<p>The next step was to shuffle the cancerous and non-cancerous images and split the data in Training and Testing on a 90/10 ratio.</p>
+			<h4>Creating and training the model</h4>
+			<p>Using Conv1D from <em>keras</em> library, we build a Sequential Neural Network using a Rectified Linear Activation Function (in order to use stochastic gradient descent with backpropagation of errors) to train the network, then using the SoftMax activation (a normalized, winner-take-all function) for our final layer.</p>
+			<p>Finally, we used a Stochastic Gradient Descent optimizer and modified the learning rate, training the model across 3 epochs. Our final model gave us an accuracy of <strong> 85.20%</strong>.</p>
+			<div style="padding-top: 20px; padding-bottom: 20px; border-style: double; "> 
+				<h3 style="text-align: center;">Image Analysis Video</h3>
+				<video style="  display: block; margin-left: auto; margin-right: auto; padding-top: 20px;" width="80%%" controls>
+					<source src="static/video/image_analysis.mp4" type="video/mp4"> 
+				</video>
+			</div>
+			<p>&nbsp;</p>
+
+			<h4>Quaranteam Model x VGG-19 </h4>
+			<p>We tested our model against a modified VGG-19 neural network, where we did not use Grayscale, but instead tested keeping the images in RBG, allowing for nuances in color to remain a feature.</p>
+			<p>The VGG-19 is a convolutional neural network model engineered by the Department of Engineering Science at University of Oxford. The number 19 stands for the number of layers with trainable weights.</p>
+			<p>Using this method, we were able to get an accuracy rating of 87%, but .with a significant increase in time and computer memory. While our model runs in less them 2 minutes, the VGG-19 model took more then 2 hours to finish the same dataset.</p>
+			<div style="padding-top: 20px; padding-bottom: 20px; border-style: double; "> 
+				<h3 style="text-align: center;">Quaranteam Model x VGG-19</h3>
+				<video style="  display: block; margin-left: auto; margin-right: auto; padding-top: 20px;" width="80%%" controls>
+					<source src="static/video/vgg19_miniclip.mp4" type="video/mp4"> 
+				</video>
+			</div>
 		</div>	
-		<div class="container py-4 mt-5">
-			<h1><i>Steps and Results</i> </h1>
-			<hr class="featurette-divider">
-			<div class="row">
-			  <div class="col">
-				<div>
-					<section> 
 		
-						<video width="800" controls>
-							<source src="static/video/video.mov" type="video/mp4"> 
-						</video>
-					</section>
-					<br/><br/>
-					
-						
-				</div>  
-					 
-				<br/>
-			  </div>
-			  <div class="col">
-				<h3>Image Dataset</h3>
-				<h5>Grayscaled Images</h5>
-				<h5>Layer Structure</h5>
-				<ul>
-					<li>1st Layer - 64</li>
-					<li>2nd Layer - 32</li>
-					<li>3rd Layer - 8</li> 
-				</ul>
-				<h5>Number of Epochs - 3</h5>
-				<!-- <ol>
-					<li>1st Layer - 64</li>
-					<li>2nd Layer - 32</li>
-					<li>3rd Layer - 8</li> 
-				</ol> -->
-				
-				<p> 
- Applied Stochastic Gradient Descent (SGD) to improve our modeling.
-</p>
-<h5>Neural Network</h5>
-<ul>
-					<li>Accuracy: <b>85.20%</b></li>
-					<li>Loss: 0.41943401273091635</li> 
-</ul>
-			  </div>
-			</div> 
-					<h1><i>Models and Visualization</i> </h1>
-					<hr class="featurette-divider">
-					
-					<div class="row">
-					  <div class="col">
-					  
-						<div>
-							<section>  
-								<video width="800" controls>
-									<source src="static/video/video2.mov" type="video/mp4"> 
-								</video>
-							</section>
-							<br/><br/> 
-						</div>   
-					  </div> 
-					  <div class="col">
-						<div>
-							<h3>Descritive Dataset</h3>
-							<h5>Original Training Data</h5>
-							<ul>
-								<li>Total Tumors - 398 </li>
-								<li>Total Benign Tumors - 250</li>
-								<li>Total Malignant Tumors - 148</li>
-			
-							</ul>
-							<h5>Oversampled Data</h5>
-							<ul>
-								<li>Total Tumors - 504 </li>
-								<li>Total Benign Tumors - 254</li>
-								<li>Total Malignant Tumors - 250</li>
-							</ul>
-							<h5>Models and Accuracy</h5>
-							<ul>
-								<li>Logistic Regression: 93.0%</li>
-								<li>SVC: 93.6%</li>
-								<li>Neural Network: 93.6%</li>
-								<li>Random Forest: 94.2%</li>
-								<li>GradientBoosting: 92.4%</li>
-
-							</ul>
-							<h5>Ensemble Model Accuracy</h5>
-							<ul>
-								<li>Ensemble Model: 95.90%</li>
-							</ul> 
-							<p>  
-						</div>
-					  </div>
-					</div> 
-			
-						<!-- 1 – Which model is appropriate for my data?
-
-2 – The order in which to set up the model. When should we oversample? At which point does oversampling occur? Should we maintain the 1-0 original balance?
-
-3 – Neural Networks are indeed a black box.
-
-4 – Never trust the description of the data you are downloading. A thorough EDA process can save a lot of time.
-
-5 – More steps do not mean better results.
-
-6 – Run your code through a small sample to prevent running out of memory. -->
- 
-				</div> 
-			</section>
+	</section>
 	
 	<section class="space-lg bg-gradient overflow-hidden" id="lessons">
 		<div class="row">
