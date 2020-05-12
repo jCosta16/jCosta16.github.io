@@ -28,27 +28,12 @@ a:focus {
     transition: all 0.3s;
 }
 
-.navbar {
-    padding: 15px 10px;
-    background: #fff;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
-}
-
 .line {
     width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
+    height: 2px;
+    border-bottom: 5px dashed rgb(26, 80, 24);
     margin: 40px 0;
-}
+    }
 
 i,
 span {
@@ -68,32 +53,27 @@ span {
     position: relative center;
 }
 
-/* #sidebar {
-    min-width: 200px;
-    max-width: 200px;
-    height: 100% !important;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    display: block;
-    position: fixed;
-    background: rgb(51, 179, 94);
-    color: rgba(255, 255, 255, 0.815);
+.navbar{
+    display: none;
+    background: rgb(51, 179, 94) !important;
+    color: rgba(255, 255, 255, 0.815) !important;
     transition: all 0.3s;
-} */
+}
+
+.navbar-brand{
+    font-size: 1.8em;
+}
 
 #sidebar {
-    min-width: 250px;
+    min-width: 80px;
     max-width: 250px;
     background: rgb(51, 179, 94);
     color: rgba(255, 255, 255, 0.815);
     transition: all 0.3s;
-}
+    position: relative;
+    display: block;
+    max-height: 110%;
 
-#sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
-    text-align: center;
 }
 
 .sidebar-header h3 {
@@ -101,25 +81,16 @@ span {
 
 }
 
-#sidebar.active .sidebar-header h3,
 #sidebar.active .CTAs {
     display: none;
     text-align: center;
 }
 
-#sidebar.active .sidebar-header strong {
-    display: none;
-}
 
 #sidebar ul li a {
     text-align: center;
 }
 
-/* #sidebar.active ul li a {
-    padding: 20px 10px;
-    text-align: center;
-    font-size: 0.85em;
-} */
 
 #sidebar.active ul li a i {
     margin-right: 0;
@@ -127,22 +98,6 @@ span {
     font-size: 1.8em;
     margin-bottom: 5px;
 }
-
-#sidebar.active ul ul a {
-    padding: 10px !important;
-}
-
-#sidebar.active .dropdown-toggle::after {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    -webkit-transform: translateX(50%);
-    -ms-transform: translateX(50%);
-    transform: translateX(50%);
-}
-
-
-
 
 #sidebar .sidebar-header {
     padding: 20px;
@@ -175,28 +130,6 @@ span {
 }
 
 
-#sidebar ul li.active a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #2bbe26;
-}
-
-
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #26882b;
-}
-
 ul.CTAs {
     padding: 20px;
 }
@@ -215,26 +148,22 @@ a.download {
     text-align: justify;
 }
 
-a.article,
-a.article:hover {
-    background: #001b91 !important;
-    color: #fff !important;
-
-}
 
 .icons{
     text-align: center;
     padding: 0px;
 }
 .icon-item{
-    width: 50px;
-    height: 50px !important;
-    padding: 5px !important;
-
-  }
-#sidebarCollapse{
-    text-align: center !important;
+    padding: .25rem;
+    background-color: #d2f1e5 !important;
+    /* border: 2px solid #dee2e6 !important; */
+    border-radius: 1rem;
+    max-width: 100%;
+    height: auto;
+    width: 25%;
+    padding: 5px ;
 }
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -242,15 +171,6 @@ body{
     background-color: #d2f1e5;
 
 }
-/* #content {
-    width: 100%;
-    margin-left: 200px;
-    padding: 20px;
-    position: left;
-    min-height: 100vh;
-    transition: all 0.3s;
-    display: block;
-} */
 
 #content {
     width: 100%;
@@ -259,11 +179,12 @@ body{
     transition: all 0.3s;
 }
 
-
 .hero {
     position: right;
     margin-bottom: 50px;
-    height: 15%;
+    /* height: 10%; */
+    min-height: 10%;
+    max-height: 10%;
     width: auto;
     padding: 20px;
     /* margin: 15px; */
@@ -273,88 +194,23 @@ body{
     background-size: 100%;
     background-position: right center;
     background-size: cover;
-  
-  }
+}
 
 
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-width: 768px) {
-    .sidebar {
+@media screen and (max-width: 824px) {
+    #sidebar {
         min-width: 80px;
         max-width: 80px;
         text-align: center;
         max-height: 100%;
     }
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
-      .sidebar a {float: left;}
-      div.content {margin-left: 0;}
 
-
-    .hero {
-        display: none;
-    }
-    #img_logo{
-        display: none;
-    }
-    #sidebar {
-        min-width: 80px;
-        max-width: 80px;
-        text-align: center;
-    }
-
-    .sidebar-header h3 {
-        text-align: center;
-        display: none;
-
-    }
-    a[data-toggle="collapse"] {
-        position: relative;
-    }
-    #sidebar ul li a {
-        text-align: center;
-        display: block;
-    }
-
-    #sidebar.active ul li a {
-        padding: 20px 10px;
-        text-align: center;
-        font-size: 0.85em;
-    }
-
-    #sidebar.active ul li a i {
-        margin-right: 0;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    #sidebar.active ul ul a {
-        padding: 10px !important;
-    }
-
-    .dropdown-toggle::after {
-        top: auto;
-        bottom: 10px;
-        right: 50%;
-        -webkit-transform: translateX(50%);
-        -ms-transform: translateX(50%);
-        transform: translateX(50%);
-    }
-    #sidebar ul li a{
-        padding: 20px 10px;
-        text-align: center;
-        font-size: 0.85em;
-    }
-
-    #sidebar .sidebar-header {
-        padding: 20px;
-        background: #26882b;
+    #img_logo, .hero, .sidebar-header h3, #download {
+        display: none !important;
     }
 
     #sidebar .sidebar-header strong {
@@ -362,7 +218,71 @@ body{
         font-size: 1.8em;
     }
 
-    #sidebar ul.components {
+    .icon-item{
+        width: 50%;
+        padding: 3px ;
+    }
+    
+    #sidebar ul li a{
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 0.85em;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+   
+    #content {
+        width: 100%;
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.4s;
+    }
+
+
+    /* #img_logo{
+        display: none;
+    }
+
+    .sidebar-header h3 {
+        display: none;
+    } */
+
+    /* #sidebar ul li a {
+        text-align: center;
+        display: block;
+    } */
+    /* #sidebar.active ul li a i {
+        margin-right: 0;
+        display: block;
+        margin-bottom: 5px;
+    } */
+
+    /* #sidebar.active ul ul a {
+        padding: 10px !important;
+    } */
+
+    /* .dropdown-toggle::after {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    } */
+
+
+    /* #sidebar .sidebar-header {
+        padding: 20px;
+        background: #26882b;
+    } */
+
+
+
+    /* #sidebar ul.components {
         padding: 20px 0;
         border-bottom: 1px solid #21aa71;
     }
@@ -382,15 +302,6 @@ body{
         margin-right: 10px;
     }
 
-
-    .dropdown-toggle {
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-    }
-
     ul ul a {
         font-size: 0.9em !important;
         padding-left: 30px !important;
@@ -398,7 +309,7 @@ body{
     }
 
     ul.CTAs {
-        padding: 20px;
+        padding: 10px;
     }
 
     ul.CTAs a {
@@ -407,48 +318,28 @@ body{
         display: block;
         border-radius: 5px;
         margin-bottom: 5px;
-    }
-
+    } */
+/* 
     #download {
         display: none !important;
+    } */
+
+}
+/* On screens that are less than 500px wide, make the sidebar into a topbar */
+@media screen and (max-width: 640px) {
+    #sidebar, #download{
+      display: none !important;
     }
-
-    a.article,
-    a.article:hover {
-        background: #001b91 !important;
-        color: #fff !important;
-
+    .navbar{
+        display: block;
     }
-
     .icons{
-        text-align: center;
+        text-align: left;
         padding: 0px;
     }
     .icon-item{
-        width: 50px;
-        height: 50px !important;
-        padding: 5px !important;
-
+        width: 5%;
+        padding: 3px ;
     }
-    #sidebarCollapse{
-        text-align: center !important;
-    }
-}
-/* On screens that are less than 700px wide, make the sidebar into a topbar
-@media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  } */
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
+    
   }
