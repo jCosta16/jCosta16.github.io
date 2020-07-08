@@ -1,0 +1,209 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Brasileirão & MLS</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/style1.css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body>
+    
+
+<main role="main">
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" >
+        <div class="container">
+            <h1 class="display-2 font-weight-bolder text-center">Brazil & USA</h1>
+            <h3 class='text-center'>Data from Brazil and USA first and second division Soccer Leagues</h3>
+        </div>
+    </div>
+    <nav class=" navbar navbar-expand-lg border-light mb-3 navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="https://ya-webdesign.com/images250_/white-soccer-ball-png-5.png" width="30" height="30" alt="Soccer ball free icon" id="soccer-ball-icon"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav w-100 nav-justified mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Leagues Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Technical Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Data Source</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-12 about">
+            <div class="card card-body bg-light">
+              <h3>ABOUT</h3>
+              <p id = "leagueinfo"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card card-body bg-light">
+                <!-- <h5>Dropdown Selection</h5>
+                <h6>League</h6>
+                <select id="LeagueselData" onchange="optionChanged(this.value)"></select>
+                <h6>Attribute</h6>
+                <select id="AttributeselDataset" onchange="optionChanged(this.value)"></select> -->
+                <form>
+                  <div class="form-group">
+                    <label for="LeagueselData">League</label>
+                    <select id="LeagueselData"  class="form-control">
+                      <option>Brazil Serie A</option>
+                      <option>Brazil Serie B</option>
+                      <option>Major League Soccer</option>
+                      <option>USL - Championship</option>
+                    
+                    </select>
+                  </div>
+
+                  <form>
+                    <div class="form-group">
+                      <label for="AttributeselDataset">Team</label>
+                      <select id="AttributeselDataset"  class="form-control">
+                        <option>Goias E. C.</option>
+                      </select>
+                    </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            
+            
+            <div class="card card-primary">
+
+                <div class="card-header">
+                    <h3 class="card-title">Selection Info</h3>
+                </div>
+
+                <div id="sample-metadata" class="card-body">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione veniam eius temporibus nulla mollitia accusantium iste cupiditate dolorem, porro rem facilis ipsum ad dicta dolor hic consequuntur asperiores est molestiae.</p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-6" id="court-svg">
+         
+        </div>
+        <div class="col-md-3">
+           <div class="card card-primary">
+
+                <div class="card-header">
+                    <h3 class="card-title">Team Line Up</h3>
+                </div>
+                
+                <div id="sample-metadata" class="card-body">
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-10">
+                <div id="table-area" class="">
+                  <table id="ufo-table" class="table table-striped table-hover table-responsive w-100">
+                    <thead>
+                      <tr>
+                        <th class="table-head">Date</th>
+                        <th class="table-head">City</th>
+                        <th class="table-head">State</th>
+                        <th class="table-head">Country</th>
+                        <th class="table-head">Shape</th>
+                        <th class="table-head">Duration</th>
+                        <th class="table-head">Comments</th>
+                      </tr>
+                    </thead>
+                    <tbody id='table-body'>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        <!-- <div class="row">
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        </div> -->
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container text-center">
+  <p> Joao Costa - 2020</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="./static/js/court.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
