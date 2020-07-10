@@ -60,22 +60,85 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-12 about">
-            <div class="card card-body bg-light text-center">
-              <h3 class="text-center">Most Valuable XI</h3>
+            <div class="card card-body bg-light">
+              <h3 class="text-center">Soccer Dashboard (BRA and US)</h3>
               <br>
-              <p>This dashboard shows the Most Valuable XI from 4 different soccer leagues.</p>
-              <p></p>
 
+              <p>For this project I scraped data from a webpage, load the data in a Database and displays the information in a HTML page.
+              </p>
+                <br>
+              <h6>Applied Technologies</h6>
+                <ul>
+                    <li>Python</li>
+                    <li>BeautifulSoup  </li>
+                    <li>SQL (PostgreSQL)  </li>
+                    <li>JSON  </li>
+                    <li>HTML/CSS  </li>
+                    <li>JavaScript  </li>
+                    <li>D3  </li>
+                </ul>
+                <h6>Steps</h6>
+                <ul>
+                    <li>Step 1 - Scraping
+                        <ul>
+                            <li>Wesbsite scraped: <a href="https://www.transfermarkt.us/">Transfermarkt </a> </li>
+                            <li>Using BeautifulSoup scrape the website and save the data in a .csv file.</li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li>Step 2 - SQL and JSON 
+                        <ul>
+                            <li>With SQLAlchemy to store all the data scraped from the URL above into in a single Database.</li>
+                            <li>Create a JSON file with all the data and used it to build the dashboard.</li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li>Step 3 - HTML and JavaScript 
+                        <ul>
+                            <li>Build a webpage to present the information.</li>
+                            <li>Making use of JavaScript and D3 parse the JSON file and display the data.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h6>Next Steps</h6>
+                <ul>
+                    <li>Presentation
+                        <ul>
+                          <li>Improve Tech info with code snips and better descriptions</li>
+                          <li>Improve About</li>
+                          <li>Add Leagues Data page</li>
+                          <li>Add charts</li>
+                          <li>Build and Add a Tableau Dashboard</li>
+
+                        </ul>
+                    </li>
+                    <br>
+                    <li>Structure
+                      <ul>
+                        <li>Improve Database</li>
+                        <li>Develop a Flask App and API</li>
+                      </ul>
+                    </li>
+                    <br>
+                    <li>Prediction
+                      <ul>
+                        <li>Develop a Machine Learn Model to predict results based on past games</li>
+                        <li>Using a Sentiment Analisys to read the feedback of a game.</li>
+                      </ul>
+                    </li>
+                    <br>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="row">
+
+    <!-- <div class="row">
 
         <div class="col-md-3">
 
             <div class="card card-body bg-light">
                 <h5>League Selection</h5>
-                <!-- <h6>League</h6> -->
+                 <h6>League</h6>
                 <select id="selDataset" onchange="optionChanged(this.value)"></select>
             </div>
             
@@ -145,7 +208,7 @@
             <div class="b"></div>
         </div>
 
-    </div>
+    </div> -->
 
 </main>
 

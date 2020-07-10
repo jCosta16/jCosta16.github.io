@@ -27,7 +27,7 @@
         </div>
     </div>
     <nav class=" navbar navbar-expand-lg border-light mb-3 navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="">
             <img src="https://ya-webdesign.com/images250_/white-soccer-ball-png-5.png" width="30" height="30" alt="Soccer ball free icon" id="soccer-ball-icon"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
                 <a class="nav-link" href="tech_info.html">Technical Info</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="data_source.html">Data Source</a>
+                <a class="nav-link" href="#">Data Source</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -60,91 +60,18 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-12 about">
-            <div class="card card-body bg-light text-center">
-              <h3 class="text-center">Most Valuable XI</h3>
-              <br>
-              <p>This dashboard shows the Most Valuable XI from 4 different soccer leagues.</p>
-              <p></p>
-
-            </div>
-        </div>
-    </div>
-    <div class="row">
-
-        <div class="col-md-3">
-
             <div class="card card-body bg-light">
-                <h5>League Selection</h5>
-                <!-- <h6>League</h6> -->
-                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-            </div>
-            
-            <div class="card card-primary">
+              <h3 class="text-center">Soccer Dashboard (BRA and US)</h3>
+              <br>
 
-                <div class="card-header">
-                    <h4 class="card-title">Selection Info</h4>
-                </div>
-
-                <div id="sample-metadata" class="card-body">
-
-                </div>
+              <p>The webpage scraped for this project was: <a href="https://www.transfermarkt.us/">Transfermarkt.us</a></p>
+              <p></p>
+              <iframe src="https://www.transfermarkt.us/" frameborder="1" style="width: max; height: 500px; display: inline-block; "></iframe>
+                <br>
+              
 
             </div>
         </div>
-
-        <div class="col-md-5" id="stadium_svg">
-         
-        </div>
-        <div class="col-md-4">
-           <div class="card card-primary">
-
-                <div class="card-header">
-                    <h3 class="card-title">Team Line Up</h3>
-                </div>
-                <div  class="">
-                  <table  class="table table-sm table-striped table-hover">
-                    <thead class="thead-light">
-                      <tr>
-                        <th class="table-head ">Name</th>
-                        <th class="table-head">Position</th>
-                        <th class="table-head">Market Value</th>
-                      </tr>
-                    </thead>
-                    <tbody class= 'table-body' id="team-table">
-                    </tbody>
-                  </table>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="card">
-            <div class="col-md-12 about">
-                <div style="padding-top:1REM;">
-                  
-                    <h3 class="text-center">Detailed Info</h3>
-                  
-                  <table id="info-table" class="table table-sm table-bordered table-hover">
-                    <thead class="thead-light">
-                      <tr>
-                        <th class="table-head">Name</th>
-                        <th class="table-head">Position</th>
-                        <th class="table-head">Age</th>
-                        <th class="table-head">Country</th>
-                        <th class="table-head">Team</th>
-                        <th class="table-head">League</th>
-                        <th class="table-head">Market Value (m)</th>
-                      </tr>
-                    </thead>
-                    <tbody class ='table-body'  id="table-detail">
-                      
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            <div class="b"></div>
-        </div>
-
     </div>
 
 </main>
