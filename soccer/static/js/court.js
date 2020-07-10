@@ -39,7 +39,7 @@ var toolTip = d3.select("body")
 .classed("tooltip", true);
 
 function buildPosition(sample) {
-  d3.json("./static/data/data1.json").then(function(soccerdata) {
+  d3.json("./static/data/data.json").then(function(soccerdata) {
     var sorted_league = [];
     if (sample == "All Leagues"){
       sorted_league = soccerdata;
@@ -113,7 +113,7 @@ function buildPosition(sample) {
   for (var i=0, len = img_positions.length; i < len; i++) {
     img_positions[i].data = max_line_up[i]
     };
-
+    // console.log(max_line_up)
   // Clear players and Tables
   var positionGroup = chartGroup.selectAll(".position");
   positionGroup.remove();
@@ -124,7 +124,7 @@ function buildPosition(sample) {
   
   img_positions.forEach(function(player) {
   chartGroup.append("image")
-  .attr('link:href', player.data.logo_img)
+  .attr('link:href', player.data.Logo_img)
   .classed(`field position ${player.Position}`, true)
   .attr('height', 60)
   .attr("x", player.x)
@@ -182,11 +182,11 @@ function buildPosition(sample) {
     .attr("class", "n tgroup");
 
     detail_table.append("td")
-    .text(player.data.age)
+    .text(player.data.Age)
     .attr("class", "n tgroup");
 
     detail_table.append("td")
-    .text(player.data.nat)
+    .text(player.data.Nat)
     .attr("class", "n tgroup");
 
     detail_table.append("td")

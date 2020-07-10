@@ -3,7 +3,7 @@ var sorted_league
 var max_player_position
 
 function buildMetadata(sample) {
-  d3.json("./static/data/data1.json").then(function(soccerdata) {
+  d3.json("./static/data/data.json").then(function(soccerdata) {
     sorted_league = [];
     if (sample == "All Leagues"){
       sorted_league = soccerdata;
@@ -64,7 +64,7 @@ function init() {
   // Grab a reference to the dropdown select element
   var selector = d3.select("#selDataset");
     // Use the list of sample names to populate the select options
-  d3.json("./static/data/data1.json").then((data) => {
+  d3.json("./static/data/data.json").then((data) => {
     var league_list = ["All Leagues"]
     for (var i = 0; i < data.length; i++) {
       var sorted_league = data[i].league_name
