@@ -68,3 +68,34 @@ select{
     border-radius: 8px;			
     pointer-events: none;			
   }
+  pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 5px;
+  }
+  
+  code red {
+      color: red;
+  }
+  code green {
+    color: green;
+}
+code bgreen {
+    color:green;
+    font-weight: bold;
+}
+code blue {
+    color: blue;
+}
+code purple {
+    color: darkviolet;
+    font-weight: bold;
+
+}
+code comment {
+    color: lightseagreen;
+    font-style: italic
+    ;
+
+}
