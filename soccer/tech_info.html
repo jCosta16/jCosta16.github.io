@@ -38,6 +38,9 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tableau.html">Tableau</a>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li> -->
@@ -103,6 +106,7 @@
 
                         </ul>
                     </li>
+                    <br>
                     <li><a href="#step1">Detailed Steps Descriptions</a></li>
                 </ul>
                 <h6>Next Steps</h6>
@@ -133,9 +137,9 @@
                     </li>
                     <br>
                     <hr>
-                    <h4>Detailed Descriptions</h4>
+                    <h4 id="step1">Detailed Descriptions</h4>
                     <ul>
-                      <li id="step1"><h6>Step 1 - Scraping</h6></li>
+                      <li><h5>Step 1 - Scraping</h5></li>
                       <p>To kickoff this project I needed to select the data source for the players’ Market Values. 
                         I wanted a data source that was reliable and most up to date with the transfers and values, and for that reason I choose the Transfermarkt website, 
                         since they have just completed 20 years working with soccer data. 
@@ -206,12 +210,12 @@
 </pre>
                         </ul>
                       </p>
-                      <li id="step2"><h6>Step 2 - SQL and JSON</h6></li>
+                      <li id="step2"><h5>Step 2 - SQL and JSON</h5></li>
                        <p>
                         Once I had the data, my next step was to store it on a SQL database. Using SQLAlchemy library I build 3 tables (Leagues, Teams and Players) and loaded the Database on Postgres SQL. 
                        </p>
                       <p>
-                        Now that I have all the data in a SQL database, I used a JOIN to and transformed the result of a SQL query in a JSON file. 
+                        Now that I have all the data in a SQL database, I used JSON library to exporte the resultos of a JOIN SQL query to a JSON file. 
                       </p>
                       <pre>
                         <code>
@@ -221,7 +225,7 @@
                         </code>
                       </pre>
 
-                      <li id="step3"><h6>Step 3 - HTML and JavaScript</h6></li>
+                      <li id="step3"><h5>Step 3 - HTML and JavaScript</h5></li>
                     </ul> 
                 </ul>
             </div>

@@ -27,7 +27,7 @@
         </div>
     </div>
     <nav class=" navbar navbar-expand-lg border-light mb-3 navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="">
             <img src="https://ya-webdesign.com/images250_/white-soccer-ball-png-5.png" width="30" height="30" alt="Soccer ball free icon" id="soccer-ball-icon"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,8 +39,8 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tableau.html">Tableau</a>
-            </li>
+                <a class="nav-link" href="tableau.html">Tableau</a>
+              </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li> -->
@@ -51,7 +51,7 @@
                 <a class="nav-link" href="tech_info.html">Technical Info</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="data_source.html">Data Source</a>
+                <a class="nav-link" href="#">Data Source</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
@@ -63,98 +63,28 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-12 about">
-            <div class="card card-body bg-light text-center">
-              <br>
-              <h3 class="text-center">Most Valuable XI</h3>
-              <br>
-              <p>This dashboard shows the Most Valuable XI across 4 different soccer leagues.</p>
-              <p></p>
-
-            </div>
-        </div>
-    </div>
-    <div class="row">
-
-        <div class="col-md-3">
-
             <div class="card card-body bg-light">
-                <h5>League Selection</h5>
-                <!-- <h6>League</h6> -->
-                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-            </div>
-            
-            <div class="card card-primary">
+              <h3 class="text-center">Tableau Charts</h3>
+              <br>
 
-                <div class="card-header">
-                    <h4 class="card-title">Selection Info</h4>
-                </div>
-
-                <div id="sample-metadata" class="card-body">
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-md-5" id="stadium_svg">
-         
-        </div>
-        <div class="col-md-4">
-           <div class="card card-primary">
-
-                <div class="card-header">
-                    <h3 class="card-title">Team Line Up</h3>
-                </div>
-                <div  class="">
-                  <table  class="table table-sm table-striped table-hover">
-                    <thead class="thead-light">
-                      <tr>
-                        <th class="table-head ">Name</th>
-                        <th class="table-head">Position</th>
-                        <th class="table-head">Market Value</th>
-                      </tr>
-                    </thead>
-                    <tbody class= 'table-body' id="team-table">
-                    </tbody>
-                  </table>
-                </div>
+              <p class="text-center" >Here you can find some Tableau visualizations regarding the presence of foreigners on the leagues.</p>
+              
+                <br>
+              
+          
 
             </div>
         </div>
     </div>
-    <div class="card">
-            <div class="col-md-12 about">
-                <div style="padding-top:1REM;">
-                  
-                    <h3 class="text-center">Line Up Detailed Info</h3>
-                  
-                  <table id="info-table" class="table table-sm table-bordered table-hover">
-                    <thead class="thead-light">
-                      <tr>
-                        <th class="table-head">Name</th>
-                        <th class="table-head">Position</th>
-                        <th class="table-head">Age</th>
-                        <th class="table-head">Country</th>
-                        <th class="table-head">Team</th>
-                        <th class="table-head">League</th>
-                        <th class="table-head">Market Value (m)</th>
-                      </tr>
-                    </thead>
-                    <tbody class ='table-body'  id="table-detail">
-                      
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            <div class="b"></div>
+    <div class="row text-center">
+        <div class="col-md-12"> 
+<div class='tableauPlaceholder' id='viz1595253110768' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;so&#47;soccer_dashb_v1&#47;ForeignersbyLeagueandClub&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='soccer_dashb_v1&#47;ForeignersbyLeagueandClub' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;so&#47;soccer_dashb_v1&#47;ForeignersbyLeagueandClub&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1595253110768');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1140px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1140px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1277px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         </div>
-
     </div>
-
 </main>
 
-<footer class="card-header container text-center">
-  <p> <strong> Joao Costa - 2020 </strong></p>
+<footer class="container text-center">
+  <p> Joao Costa - 2020</p>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
