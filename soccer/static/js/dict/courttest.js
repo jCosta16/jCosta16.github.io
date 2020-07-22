@@ -39,7 +39,7 @@ var toolTip = d3.select("body")
 .classed("tooltip", true);
 
 function buildPosition(sample) {
-  d3.json("./static/data/data.json").then(function(soccerdata) {
+  d3.json("../testdata.json").then(function(soccerdata) {
     var sorted_league = [];
     if (sample == "All Leagues"){
       sorted_league = soccerdata;
@@ -113,7 +113,7 @@ function buildPosition(sample) {
   for (var i=0, len = img_positions.length; i < len; i++) {
     img_positions[i].data = max_line_up[i]
     };
-    // console.log(max_line_up)
+
   // Clear players and Tables
   var positionGroup = chartGroup.selectAll(".position");
   positionGroup.remove();
@@ -124,7 +124,7 @@ function buildPosition(sample) {
   
   img_positions.forEach(function(player) {
   chartGroup.append("image")
-  .attr('link:href', player.data.Logo_img)
+  .attr('link:href', player.data.logo_img)
   .classed(`field position ${player.Position}`, true)
   .attr('height', 60)
   .attr("x", player.x)
@@ -133,11 +133,8 @@ function buildPosition(sample) {
     toolTip.style("opacity", .9)
     .attr("class", "tooltip");		
         toolTip	.html(`<strong>${player.data.name}</strong>
-        <hr>Age: <strong>${player.data.Age}</strong>
         <br>Market Value: <strong>$${player.data.market_value}M</strong>
-        <br>Position: <strong>${player.data.position}</strong>
-        <br>Nationality: <strong>${player.data.Nat}</strong>
-        <br>Team: <strong>${player.data.club}</strong>`)	
+        <br>Position: <strong>${player.data.position}</strong>`)	
         .style("left", (d3.event.pageX) + "px")		
         .style("top", (d3.event.pageY - 28) + "px");	
     })					
@@ -185,11 +182,11 @@ function buildPosition(sample) {
     .attr("class", "n tgroup");
 
     detail_table.append("td")
-    .text(player.data.Age)
+    .text(player.data.age)
     .attr("class", "n tgroup");
 
     detail_table.append("td")
-    .text(player.data.Nat)
+    .text(player.data.nat)
     .attr("class", "n tgroup");
 
     detail_table.append("td")
