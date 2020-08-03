@@ -67,7 +67,7 @@
               <h3 class="text-center">Soccer Dashboard (BRA and US)</h3>
               <br>
 
-              <p>For this project I scraped data from a webpage, load the data in a Database and displays the information in a HTML page.
+              <p>For this project I scraped data from a webpage, loaded it in a Database and created this HTML page to display the information.
               </p>
                 <br>
               <h6>Applied Technologies</h6>
@@ -81,43 +81,45 @@
                     <li>D3  </li>
                 </ul>
                 <h6>Steps</h6>
-                <ul>
-                    <li>Step 1 - Scraping
+                <ol>
+                    <li>Scrape
                         <ul>
                             <li>Website scraped: <a href="https://www.transfermarkt.us/">Transfermarkt </a> 
                             </li>
-                            <li>Using BeautifulSoup scrape the website and save the data in a .csv file.</li>
+                            <li>Using BeautifulSoup, scrape the website and save the data in a .csv file.</li>
 
                         </ul>
                     </li>
                     <br>
-                    <li>Step 2 - SQL and JSON 
+                    <li>SQL and JSON 
                         <ul>
-                            <li>With SQLAlchemy to store all the data scraped from the URL above into in a single Database.</li>
+                            <li>With SQLAlchemy, store all the data scraped from the URL above into in a single Database.</li>
                             <li>Create a JSON file with all the data and used it to build the dashboard.</li>
 
                         </ul>
                     </li>
                     <br>
-                    <li>Step 3 - HTML and JavaScript 
+                    <li>HTML and JavaScript 
                         <ul>
                             <li>Build a webpage to present the information.</li>
-                            <li>Making use of JavaScript and D3 parse the JSON file and display the data.</li>
+                            <li>Using JavaScript and D3, parse the JSON file and display the data.</li>
 
                         </ul>
                     </li>
-                    <br>
-                    <li><a href="#step1">Detailed Steps Descriptions</a></li>
-                </ul>
-                <h6>Next Steps</h6>
+                   
+                    <!-- <li><a href="#step1">Detailed Steps Descriptions</a></li> -->
+                </ol>
+                <li><a href="#step1">Detailed Steps Descriptions</a></li>
+                <br>
+                <h6>Further Improvements</h6>
                 <ul>
                     <li>Presentation
                         <ul>
-                          <li>Improve Tech info with code snips and better descriptions</li>
-                          <li>Improve About</li>
-                          <li>Add Leagues Data page</li>
+                          <li>Improve <i>Technical Info</i> with code snips and better descriptions</li>
+                          <li>Improve <i>About</i></li>
+                          <li>Add <i>Leagues Data</i> page</li>
                           <li>Add charts</li>
-                          <li>Build and Add a Tableau Dashboard</li>
+                          <li>Improve Tableau Dashboards</li>
 
                         </ul>
                     </li>
@@ -131,8 +133,8 @@
                     <br>
                     <li>Prediction
                       <ul>
-                        <li>Develop a Machine Learn Model to predict results based on past games</li>
-                        <li>Using a Sentiment Analysis to read the feedback of a game.</li>
+                        <li>Develop a Machine Learning Model to predict results based on past games</li>
+                        <li>Use a Sentiment Analysis to read the feedback of a game.</li>
                       </ul>
                     </li>
                     <br>
@@ -140,17 +142,17 @@
                     <h4 id="step1">Detailed Descriptions</h4>
                     <ul>
                       <li><h5>Step 1 - Scraping</h5></li>
-                      <p>To kickoff this project I needed to select the data source for the players’ Market Values. 
-                        I wanted a data source that was reliable and most up to date with the transfers and values, and for that reason I choose the Transfermarkt website, 
+                      <p>To kickoff this project, first I needed to select the data source for the players’ market values. 
+                        I wanted a data source that was reliable and up to date with transfers and values, therefore I chose the Transfermarkt website, 
                         since they have just completed 20 years working with soccer data. 
-                        The leagues that I decided to work with were the first and second tiers for the Brazilian and the US soccer leagues.
+                        The leagues I decided to work with were the first divisions from Brazil, USA, Mexico and Argetina.
                       </p>
-                      <p>Once I had the data source, the task now resided on how I could obtain the data to work with. 
-                        Using the direct link to each league’s page I used Beautiful Soup to read the direct link and scrape information about the clubs for the respective league 
-                        and look on each club link to get players info, then used pandas to create a DataFrame and write a .csv file.
+                      <p>Once I had chosen the source, the next step was obtain the data to work with. 
+                        With the direct link to each league’s page I used Beautiful Soup to read and scrape information about the clubs for the respective league 
+                        and look up the players info on each club page. Then used pandas to create a DataFrame and write a .csv file.
                       </p>
                       <p>
-                        During the scraping step I have encountered some issues:
+                        While scraping I ran into some issues:
                         <ul>
                           <li>I wanted the values to be displayed in US Dollars instead of Euros. To overcome this, I built a simple function that would get the exchange rate for the day and apply on all the values.
                           </li>
@@ -175,7 +177,7 @@
                                 </code>
                           </pre>
                           <li>
-                            The second problem was the accents. I created another function to run while getting the names and normalize to Unicode and strip any left space.
+                            The second problem was accent marks and special characters. I created another function to run while getting the names, that normalizes to Unicode and strips any left spaces.
                           </li>
                           <li>
                             Finally, I had to deal with some missing heights.  My approach to this issue was to use the average height of a player with the same position and from the same country to fill the missing data on other players.
@@ -212,10 +214,8 @@
                       </p>
                       <li id="step2"><h5>Step 2 - SQL and JSON</h5></li>
                        <p>
-                        Once I had the data, my next step was to store it on a SQL database. Using SQLAlchemy library I build 3 tables (Leagues, Teams and Players) and loaded the Database on Postgres SQL. 
-                       </p>
-                      <p>
-                        Now that I have all the data in a SQL database, I used JSON library to export the results of a JOIN SQL query to a JSON file. 
+                        Once I had the data, I decided to store it on a SQL database. Using SQLAlchemy library I built 3 tables (Leagues, Teams and Players) and loaded the Database on Postgres SQL. 
+                        Then I used JSON to export the results of a <i>JOIN</i> SQL query to a JSON file. 
                       </p>
                       <pre>
                         <code>
