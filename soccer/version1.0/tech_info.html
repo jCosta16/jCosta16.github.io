@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileirão & MLS</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/style1.css">
+
+  </head>
+  <body>
+    
+
+<main role="main">
+
+    <div class="jumbotron" >
+        <div class="container">
+            <h1 class="display-2 font-weight-bolder text-center">Soccer Dashboard</h1>
+            <h3 class='text-center'>Data from Brazil, Mexico, USA and Argentina Soccer Leagues</h3>
+        </div>
+    </div>
+    <nav class=" navbar navbar-expand-lg border-light mb-3 navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="https://ya-webdesign.com/images250_/white-soccer-ball-png-5.png" width="30" height="30" alt="Soccer ball free icon" id="soccer-ball-icon"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav w-100 nav-justified mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tableau.html">Tableau</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li> -->
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Leagues Data</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="tech_info.html">Technical Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="data_source.html">Data Source</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-12 about">
+            <div class="card card-body bg-light">
+              <h3 class="text-center">Soccer Dashboard (BRA and US)</h3>
+              <br>
+
+              <p>For this project I scraped data from a webpage, loaded it in a Database and created this HTML page to display the information.
+              </p>
+                <br>
+              <h6>Applied Technologies</h6>
+                <ul>
+                    <li>Python</li>
+                    <li>BeautifulSoup  </li>
+                    <li>SQL (PostgreSQL)  </li>
+                    <li>JSON  </li>
+                    <li>HTML/CSS  </li>
+                    <li>JavaScript  </li>
+                    <li>D3  </li>
+                </ul>
+                <h6>Steps</h6>
+                <ol>
+                    <li>Scrape
+                        <ul>
+                            <li>Website scraped: <a href="https://www.transfermarkt.us/">Transfermarkt </a> 
+                            </li>
+                            <li>Using BeautifulSoup, scrape the website and save the data in a .csv file.</li>
+
+                        </ul>
+                    </li>
+                    <br>
+                    <li>SQL and JSON 
+                        <ul>
+                            <li>With SQLAlchemy, store all the data scraped from the URL above into in a single Database.</li>
+                            <li>Create a JSON file with all the data and used it to build the dashboard.</li>
+
+                        </ul>
+                    </li>
+                    <br>
+                    <li>HTML and JavaScript 
+                        <ul>
+                            <li>Build a webpage to present the information.</li>
+                            <li>Using JavaScript and D3, parse the JSON file and display the data.</li>
+
+                        </ul>
+                    </li>
+                   
+                    <!-- <li><a href="#step1">Detailed Steps Descriptions</a></li> -->
+                </ol>
+                <li><a href="#step1">Detailed Steps Descriptions</a></li>
+                <br>
+                <h6>Further Improvements</h6>
+                <ul>
+                    <li>Presentation
+                        <ul>
+                          <li>Improve <i>Technical Info</i> with code snips and better descriptions</li>
+                          <li>Improve <i>About</i></li>
+                          <li>Add <i>Leagues Data</i> page</li>
+                          <li>Add charts</li>
+                          <li>Improve Tableau Dashboards</li>
+
+                        </ul>
+                    </li>
+                    <br>
+                    <li>Structure
+                      <ul>
+                        <li>Improve Database</li>
+                        <li>Develop a Flask App and API</li>
+                      </ul>
+                    </li>
+                    <br>
+                    <li>Prediction
+                      <ul>
+                        <li>Develop a Machine Learning Model to predict results based on past games</li>
+                        <li>Use a Sentiment Analysis to read the feedback of a game.</li>
+                      </ul>
+                    </li>
+                    <br>
+                    <hr>
+                    <h4 id="step1">Detailed Descriptions</h4>
+                    <ul>
+                      <li><h5>Step 1 - Scraping</h5></li>
+                      <p>To kickoff this project, first I needed to select the data source for the players’ market values. 
+                        I wanted a data source that was reliable and up to date with transfers and values, therefore I chose the Transfermarkt website, 
+                        since they have just completed 20 years working with soccer data. 
+                        The leagues I decided to work with were the first divisions from Brazil, USA, Mexico and Argetina.
+                      </p>
+                      <p>Once I had chosen the source, the next step was obtain the data to work with. 
+                        With the direct link to each league’s page I used Beautiful Soup to read and scrape information about the clubs for the respective league 
+                        and look up the players info on each club page. Then used pandas to create a DataFrame and write a .csv file.
+                      </p>
+                      <p>
+                        While scraping I ran into some issues:
+                        <ul>
+                          <li>I wanted the values to be displayed in US Dollars instead of Euros. To overcome this, I built a simple function that would get the exchange rate for the day and apply on all the values.
+                          </li>
+                          <pre>
+                            <code>
+  convert_url =  <red>"https://www.google.com/search?q=euro+to+dollar....."</red>
+  html = requests.get(convert_url, headers=headers)
+  soup = BeautifulSoup(html.content, <red>'html.parser'</red>)
+  curr_value = soup.find(<red>'div'</red>, class_= <red>"b1hJbf"</red>)
+  curr_value = <green>round</green>(<green>float</green>(curr_value[<red>"data-exchange-rate"</red>]),2)
+  
+  <bgreen>def</bgreen> <blue>get_value_us</blue>(x):
+      value = []
+      <bgreen>for</bgreen> char <purple>in</purple> x:
+          value.append(char)
+      <bgreen>if</bgreen> value[-1] == <red>"m"</red>:
+          float_value = <red>""</red>.join(value[1:-1])
+          <bgreen>return</bgreen> <green>round</green>(<green>float</green>(float_value)*curr_value,2)
+      <bgreen>else</bgreen>:
+          float_value = <red>""</red>.join(value[1:-3])
+          <bgreen>return</bgreen> <green>round</green>((<green>float</green>(float_value)*curr_value)/1000,2)
+                                </code>
+                          </pre>
+                          <li>
+                            The second problem was accent marks and special characters. I created another function to run while getting the names, that normalizes to Unicode and strips any left spaces.
+                          </li>
+                          <li>
+                            Finally, I had to deal with some missing heights.  My approach to this issue was to use the average height of a player with the same position and from the same country to fill the missing data on other players.
+                          </li>
+<pre>
+  <code>
+  <bgreen>def</bgreen> <blue>fix_heights</blue>(df):
+      heights = []
+      
+      <bgreen>for</bgreen> index, row <purple>in</purple> df.iterrows():
+          <bgreen>if</bgreen> pd.notnull(row[<red>"Height"</red>]):
+              heights.append(row[<red>"Height"</red>])
+          <bgreen>else</bgreen>:
+              nat = row[<red>"Nat"</red>]
+              position = row[<red>"position"</red>]
+              field_position = row[<red>"field_position"</red>]
+              comp_players = df.loc[((df[<red>"Nat"</red>] == nat) & (df[<red>"position"</red>] == position))]
+              avg_df = <green>round</green>(comp_players[<red>"Height"</red>].mean(skipna = <bgreen>True</bgreen>),2)
+              row[<red>"Height"</red>] = avg_df
+              <bgreen>if</bgreen> pd.isnull(row[<red>"Height"</red>]):
+                  comp_players2 = df.loc[((df[<red>"Nat"</red>] == nat) & (df[<red>"field_position"</red>] == field_position))]
+                  avg_df2 = <green>round</green>(comp_players2[<red>"Height"</red>].mean(skipna = <bgreen>True</bgreen>),2)
+                  row[<red>"Height"</red>] = avg_df2
+                  if pd.isnull(row[<red>"Height"</red>]):
+                      comp_players3 = df.loc[((df[<red>"position"</red>] == position))]
+                      avg_df3 = <green>round</green>(comp_players3[<red>"Height"</red>].mean(skipna = <bgreen>True</bgreen>),2)
+                      row[<red>"Height"</red>] = avg_df3
+              heights.append(row[<red>"Height"</red>])
+      
+      df.height = heights
+  </code>
+</pre>
+                        </ul>
+                      </p>
+                      <li id="step2"><h5>Step 2 - SQL and JSON</h5></li>
+                       <p>
+                        Once I had the data, I decided to store it on a SQL database. Using SQLAlchemy library I built 3 tables (Leagues, Teams and Players) and loaded the Database on Postgres SQL. 
+                        Then I used JSON to export the results of a <i>JOIN</i> SQL query to a JSON file. 
+                      </p>
+                      <pre>
+                        <code>
+  <comment># read database to json file</comment>
+  pd.read_sql_query(<red>'SELECT * FROM  leagues JOIN (teams JOIN players USING("team_ID")) USING ("league_ID")'</red>, con=engine)\
+  .to_json(<red>r'../dashboard/static/data/data.json'</red>, orient=<red>'records'</red>)                          
+                        </code>
+                      </pre>
+
+                      <li id="step3"><h5>Step 3 - HTML and JavaScript</h5></li>
+                    </ul> 
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card card-body bg-light">
+                <h5>League Selection</h5>
+                 <h6>League</h6>
+                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+            </div>
+            
+            <div class="card card-primary">
+
+                <div class="card-header">
+                    <h4 class="card-title">Selection Info</h4>
+                </div>
+
+                <div id="sample-metadata" class="card-body">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-5" id="stadium_svg">
+         
+        </div>
+        <div class="col-md-4">
+           <div class="card card-primary">
+
+                <div class="card-header">
+                    <h3 class="card-title">Team Line Up</h3>
+                </div>
+                <div  class="">
+                  <table  class="table table-sm table-striped table-hover">
+                    <thead class="thead-light">
+                      <tr>
+                        <th class="table-head ">Name</th>
+                        <th class="table-head">Position</th>
+                        <th class="table-head">Market Value</th>
+                      </tr>
+                    </thead>
+                    <tbody class= 'table-body' id="team-table">
+                    </tbody>
+                  </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="card">
+            <div class="col-md-12 about">
+                <div style="padding-top:1REM;">
+                  
+                    <h3 class="text-center">Detailed Info</h3>
+                  
+                  <table id="info-table" class="table table-sm table-bordered table-hover">
+                    <thead class="thead-light">
+                      <tr>
+                        <th class="table-head">Name</th>
+                        <th class="table-head">Position</th>
+                        <th class="table-head">Age</th>
+                        <th class="table-head">Country</th>
+                        <th class="table-head">Team</th>
+                        <th class="table-head">League</th>
+                        <th class="table-head">Market Value (m)</th>
+                      </tr>
+                    </thead>
+                    <tbody class ='table-body'  id="table-detail">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            <div class="b"></div>
+        </div>
+
+    </div> -->
+
+</main>
+
+<footer class="container text-center">
+  <p> Joao Costa - 2020</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="./static/js/court.js"></script>
+<script src="./static/js/data_select.js"></script>
+
+
+</html>

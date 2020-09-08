@@ -1,6 +1,6 @@
 var soccerdata
 var max_line_up
-var target_league
+
  
 // Append the SVG wrapper to the page, set its height and width, and create a variable which references it
 var svg = d3.select("#stadium_svg")
@@ -38,62 +38,30 @@ var toolTip = d3.select("body")
 .append("div")
 .classed("tooltip", true);
 
-
-// {
-//   d3.json("../dict_soccer_data_hieranchy.json").then(function(soccerdata) {
-//     var sorted_league = [];
-//     if (sample == "All Leagues"){
-//       sorted_league = soccerdata;
-//     }
-//     else{
-//       for (var i=0, len = soccerdata.length; i < len; i++) {
-//         if (soccerdata[i].league_name == sample) {
-//           sorted_league.push(soccerdata[i]);
-//         };
-//       };   
-//     }; 
-//     court_data = sorted_league
-
-function buildPosition(sample){
-  d3.json("./static/data/dict_soccer_data.json").then(function(soccerdata) {
-  ;
-  if (sample == "All Leagues"){
-    sorted_league = soccerdata;
-  }
-  else{
-    for (var i=0, len = soccerdata.Leagues.length; i < len; i++) {
-      // console.log(soccerdata.Leagues.league_name)
-
-      if (soccerdata.Leagues[i].league_name == sample) {
-        sorted_league = (soccerdata.Leagues[i]);
-      };  
-    };   
-  };  
-
-  target_league = []
-  if (sorted_league.Leagues){
-    players = soccerdata.Players
-  }
-  else{soccerdata.Players.forEach((player) => {
-      if (player.league_name == sorted_league.league_name){
-      target_league.push(player)
-      } })
-      players = target_league
-  }
-  court_data = players
-
-  // console.log(court_data)
-
-  // Field Postions 
+function buildPosition(sample) {
+  d3.json("./static/data/data.json").then(function(soccerdata) {
+    var sorted_league = [];
+    if (sample == "All Leagues"){
+      sorted_league = soccerdata;
+    }
+    else{
+      for (var i=0, len = soccerdata.length; i < len; i++) {
+        if (soccerdata[i].league_name == sample) {
+          sorted_league.push(soccerdata[i]);
+        };
+      };   
+    }; 
+    court_data = sorted_league
+ 
+// Field Postions 
   var field_positions = []
-  for (var i=0, len = court_data.length; i < len; i++) {
-    var position = court_data[i].field_position
+  for (var i=0, len = soccerdata.length; i < len; i++) {
+    var position = soccerdata[i].field_position
       if (!(position in field_positions)) {
         field_positions.push(position)
         }
   }
   field_positions = (Array.from(new Set(field_positions)))
-
   // console.log(field_positions)
 
 // Players Positions
@@ -112,9 +80,9 @@ function buildPosition(sample){
   field_positions.forEach((position) => {
     var selected_position = []
     var sorted_position = []
-    for (var i=0, len = court_data.length; i < len; i++) {
-      if (position == court_data[i].field_position) {
-        selected_position.push(court_data[i])
+    for (var i=0, len = sorted_league.length; i < len; i++) {
+      if (position == sorted_league[i].field_position) {
+        selected_position.push(sorted_league[i])
        }
     }
 
@@ -142,12 +110,10 @@ function buildPosition(sample){
       
   });
 
-// console.log(max_line_up)
-
   for (var i=0, len = img_positions.length; i < len; i++) {
     img_positions[i].data = max_line_up[i]
     };
-
+    // console.log(max_line_up)
   // Clear players and Tables
   var positionGroup = chartGroup.selectAll(".position");
   positionGroup.remove();
@@ -167,8 +133,11 @@ function buildPosition(sample){
     toolTip.style("opacity", .9)
     .attr("class", "tooltip");		
         toolTip	.html(`<strong>${player.data.name}</strong>
+        <hr>Age: <strong>${player.data.Age}</strong>
         <br>Market Value: <strong>$${player.data.market_value}M</strong>
-        <br>Position: <strong>${player.data.position}</strong>`)	
+        <br>Position: <strong>${player.data.position}</strong>
+        <br>Nationality: <strong>${player.data.Nat}</strong>
+        <br>Team: <strong>${player.data.club}</strong>`)	
         .style("left", (d3.event.pageX) + "px")		
         .style("top", (d3.event.pageY - 28) + "px");	
     })					
@@ -216,11 +185,11 @@ function buildPosition(sample){
     .attr("class", "n tgroup");
 
     detail_table.append("td")
-    .text(player.data.age)
+    .text(player.data.Age)
     .attr("class", "n tgroup");
 
     detail_table.append("td")
-    .text(player.data.nat)
+    .text(player.data.Nat)
     .attr("class", "n tgroup");
 
     detail_table.append("td")
