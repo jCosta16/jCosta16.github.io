@@ -151,15 +151,9 @@ function buildTeam(sample) {
     team_selector.text("");
     team_list.forEach((team) => {
       var short_name = "" 
-      var shor_list = ["Asociacion Atletica", "Sport Club", "Futebol Clube", "Sporting Club","Sociedade Esportiva",  "Club Atletico", "Esporte Clube", "Football Club", "Foot-Ball Porto Alegrense" ]
-      var remove_list = ["Foot Ball Club", "Clube de Regatas do", "Club de Regatas", "Godoy "]
-      if  (team.includes("Sport Club do Recife")){
-        short_name = team
-      }
-      else if (shor_list.some(x => team.includes(x))){
-        short_name = short_name_func(shor_list, team)
-      }
-      else if (remove_list.some(x => team.includes(x))){
+      var shor_list = ["Asociacion Atletica", "Sport Club", "Futebol Clube", "Sporting Club","Sociedade Esportiva", "Esporte Clube", "Football Club", "Foot-Ball Porto Alegrense" ]
+      var remove_list = ["Estudiantes", "Foot Ball Club", "Clube de Regatas do", "Club de Regatas", "Godoy ", "Gimnasia", "Lorenzo"]
+      if (remove_list.some(x => team.includes(x))){
         switch(team) {
           case "Clube de Regatas do Flamengo":
             short_name = "CR Flamengo"
@@ -168,12 +162,29 @@ function buildTeam(sample) {
             short_name = "CR Vasco da Gama"
             break
           case "Club Deportivo Godoy Cruz Antonio Tomba":
-            short_name = "CD Godoy Cruz Antonio Tomba"
+            short_name = "CD Godoy Cruz"
             break
-
+          case "Club de Gimnasia y Esgrima La Plata":
+            short_name = "Gimnasia y Esgrima"
+            break
+          case "Club Atletico San Lorenzo de Almagro":
+            short_name = "San Lorenzo"
+            break
+          case "Club Estudiantes de La Plata":
+            short_name = "Estudiantes de La Plata"
+            break
           default:
             short_name = "Coritiba Foot Ball Club"
-      }}
+      }} 
+      else if (team.includes("Sport Club do Recife")){
+        short_name = team
+      }
+      else if (team.includes("Club Atletico")){
+        short_name = team.replace("Club Atletico", "")
+      }
+      else if (shor_list.some(x => team.includes(x))){
+        short_name = short_name_func(shor_list, team)
+      }
       else{
         short_name = team
       }
