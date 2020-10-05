@@ -65,7 +65,7 @@ function buildMetadata(sample) {
     sorted_position = selected_position.sort((a,b) => (a.market_value > b.market_value) ? -1:1).slice(0,10);
     
   });
-  console.log(max_field_position)
+  // console.log(max_field_position)
      // Inserting metadata1
      var sampleMeta = d3.select("#sample-metadata").data(max_field_position).html("");
      max_field_position.forEach(function(player) {
