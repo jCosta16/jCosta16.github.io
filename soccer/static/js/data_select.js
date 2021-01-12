@@ -22,9 +22,9 @@ function buildMetadata(sample) {
 
     target_league = []
     if (sorted_league.Leagues){
-      players = soccerdata.Players
+      players = soccerdata.players
     }
-    else{soccerdata.Players.forEach((player) => {
+    else{soccerdata.players.forEach((player) => {
         if (player.league_name == sorted_league.league_name){
         target_league.push(player)
         } })
@@ -65,7 +65,7 @@ function buildMetadata(sample) {
     sorted_position = selected_position.sort((a,b) => (a.market_value > b.market_value) ? -1:1).slice(0,10);
     
   });
-  // console.log(max_field_position)
+  console.log(max_field_position)
      // Inserting metadata1
      var sampleMeta = d3.select("#sample-metadata").data(max_field_position).html("");
      max_field_position.forEach(function(player) {
@@ -102,7 +102,7 @@ function init() {
     
     // Use the first sample from the list to build the initial plots
     const firstSample = league_list[0];
-    
+    console.log(firstSample)
     buildMetadata(firstSample);
     buildPosition(firstSample);
     // buildMap(firstSample);

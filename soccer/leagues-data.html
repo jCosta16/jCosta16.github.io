@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,7 +33,7 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <!-- <link href="jumbotron.css" rel="stylesheet"> -->
   </head>
   <body>
     
@@ -103,27 +102,15 @@
                     <label for="LeagueselData">League</label>
                     <div>
                       <select id="selLeague" onchange="optionChanged(this.value)"></select>
-
-                    <!-- </div>
-
-                    <select id="LeagueselData"  class="form-control">
-                      <option>Brazil Serie A</option>
-                      <option>Brazil Serie B</option>
-                      <option>Major League Soccer</option>
-                      <option>USL - Championship</option>
-                    
-                    </select> -->
                   </div>
 
                   <form>
                     <div class="form-group">
                       <label for="AttributeselDataset">Team</label>
                       <div>
-                      <select id="selTeam" onsubmit="optionChanged(this.value)"></select>
+                      <select id="selTeam" onchange="optionChanged(this.value)"></select>
                     </div>
                     </div>
-
-                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
             
@@ -226,6 +213,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!-- <script src="./static/js/court.js"></script> -->
+<script src="./static/js/court.js"></script>
 <script src="./static/js/teams_select.js"></script>
 </html>
